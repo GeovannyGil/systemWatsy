@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--======== BOX ICONS =========-->
+  <link rel="stylesheet" href="assets/css/box-icons/boxicons.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap5/bootstrap.min.css">
+  <script src="assets/js/bootstrap5/bootstrap.bundle.min.js"></script>
+  <!--======== CSS =========-->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <title>Responsive sidebar submenus</title>
+</head>
+<body>
+  <!--======== HEADER =========-->
+  <header class="header">
+    <div class="header__container">
+
+      <img src="assets/img/perfil.jpg" alt="" class="header__img">
+
+      <!-- <a href="#" class="header__logo">Watsy</a> -->
+
+      <div class="header__search">
+        <input type="search" placeholder="Search" class="header__input">
+        <i class="bx bx-search header__icon"></i>
+      </div>
+
+      <div class="header__toggle">
+        <i class="bx bx-menu" id="header-toggle"></i>
+      </div>
+
+    </div>
+  </header>
+  <!--======== NAV =========-->
+  <div class="nav" id="navbar">
+    <nav class="nav__container">
+      <div>
+        <a href="#" class="nav__link nav__logo">
+          <img src="assets/img/isotipo-WatsyD-24px.svg" class="nav__icon-iso" alt="">
+          <img src="assets/img/Logotipo-WatsyD-24px.svg" class="nav__icon-lgtipo" alt="">
+          <!-- <i class='bx bxs-message-square nav__icon'></i> -->
+          <!-- <span class="nav__logo-name">Watsy</span> -->
+        </a>
+        <div class="nav__list">
+          <div class="nav__items">
+            <h3 class="nav__subtitle">Application</h3>
+            <a href="#" class="nav__link">
+              <i class='bx bxs-dashboard nav__icon'></i>
+              <span class="nav__name">Dashboard</span>
+            </a>
+          <a href="#" class="nav__link">
+              <i class='bx bxs-user nav__icon'></i>
+              <span class="nav__name">Clientes</span>
+            </a>
+            <a href="#" class="nav__link">
+              <i class='bx bxs-group nav__icon'></i>
+              <span class="nav__name">Colaboradores</span>
+            </a>
+
+            <div class="nav__dropdown">
+              <a href="#" class="nav__link">
+                <i class='bx bxs-file-doc nav__icon'></i>
+                <span class="nav__name">Documentos</span>
+                <i class="bx bx-chevron-down nav__icon nav__dropdown-icon"></i>
+              </a>
+
+              <div class="nav__dropdown-collapse">
+                <div class="nav__dropdown-content">
+                  <a href="#" class="nav__dropdown-item">Ordenes</a>
+                  <a href="#" class="nav__dropdown-item">Cotizaciones</a>
+                  <a href="#" class="nav__dropdown-item">Facturas</a>
+                  <a href="#" class="nav__dropdown-item">Recibo de Caja</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="nav__link nav__logout">
+        <i class='bx bx-log-out nav__icon'></i>
+        <span class="nav__name">Log Out</span>
+      </a>
+    </nav>
+  </div>
+  <!--======== CONTENTS =========-->
+  <main>
+    <header class="header__main-content grid-col-2 actions-docs">
+      <div class="title-section">
+        <h2 class="main__title-section">Orde<span class="main__title-section-color">nes.</span></h2>
+      </div>
+      <div class="group__buttons text-end d-grid">
+        <button class="btn__ btn__secondary btn__small m-0"><i class='bx bxs-printer'></i> Imprimir</button>
+        <button class="btn__ btn__secondary btn__small m-0"><i class='bx bx-export'></i> Exportar</button>
+        <button class="btn__ btn__primary btn__small m-0"><i class='bx bx-plus'></i> Crear orden</button>
+      </div>
+    </header>
+    <section class="main__section-order options-docs">
+      <h4 class="h4__sub-title">Filtros <hr></h4>
+      <header class="grid-col-2">
+        <div class="header__search w-auto my-1">
+          <input type="search" placeholder="Search" class="header__input">
+          <i class="bx bx-search header__icon"></i>
+        </div>
+        <div class="group-filters grid-col-4 my-1">
+            <div class="__input __input__select-filter d-flex m-0 my-1">
+              <input type="date" class="__input__control">
+            </div>
+            <div class="__input __input__select __input__icon __input__select-filter m-0 my-1">
+              <i class='bx bxs-purchase-tag-alt __input__i'></i>
+              <select class="__input__control">
+                <option value="">Estado</option>
+              </select>
+              <i class='bx bxs-chevron-down __input__select-i-arrow'></i>
+            </div>
+            <div class="__input __input__select __input__icon  __input__select-filter m-0 my-1">
+              <i class='bx bxs-user __input__i'></i>
+              <select class="__input__control">
+                <option value="">Cliente</option>
+              </select>
+              <i class='bx bxs-chevron-down __input__select-i-arrow'></i>
+            </div>
+            <div class="__input __input__select __input__icon  __input__select-filter m-0 my-1">
+              <i class='bx bx-group __input__i'></i>
+              <select class="__input__control">
+                <option value="">Colaborador</option>
+              </select>
+              <i class='bx bxs-chevron-down __input__select-i-arrow'></i>
+            </div>
+        </div>
+      </header>
+      <main class="main__content-docs my-2">
+        <p class="text__sm text-light my-2">Mostrando <span>11</span> - <span>20</span> de <span>64</span> resultados </p>
+        <div class="table-responsive">
+          <table class="table table-borderless table-hover">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Fecha de creación</th>
+                <th>Cliente</th>
+                <th>Colaborador</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><i class='bx bxs-user table__info-icon'></i> O-7956</td>
+                <td class="text__sbold">15 Jul 2020 <span class="d-block text__regular color__text">16:00</span></td>
+                <td>Juan Perez</td>
+                <td>Empresa 1</td>
+                <td><span class="badge bg-danger">Cancelado</span></td>
+                <td>
+                  <button class="btn__action-button"><i class='bx bxs-info-circle'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-pencil'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-trash-alt'></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td><i class='bx bxs-user table__info-icon'></i> O-7956</td>
+                <td class="text__sbold">18 Nov 2021 <span class="d-block text__regular color__text">16:00</span></td>
+                <td>Jorge</td>
+                <td>Empresa 2</td>
+                <td><span class="badge bg-danger">Cancelado</span></td>
+                <td>
+                  <button class="btn__action-button"><i class='bx bxs-info-circle'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-pencil'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-trash-alt'></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </section>
+  </main>
+  <!--======== MAIN JS =========-->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="19" viewBox="0 0 23 19">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.412" y1="0.079" x2="0.813" y2="1.419" gradientUnits="objectBoundingBox">
+      <stop offset="0.3" stop-color="#ff6e00"/>
+      <stop offset="0.41" stop-color="#ff5f00"/>
+      <stop offset="0.62" stop-color="#ff4900"/>
+      <stop offset="0.82" stop-color="#ff3c00"/>
+      <stop offset="1" stop-color="#ff3700"/>
+    </linearGradient>
+    <clipPath id="clip-isotipo-WatsyD-24px">
+      <rect width="23" height="19"/>
+    </clipPath>
+  </defs>
+  <g id="isotipo-WatsyD-24px" clip-path="url(#clip-isotipo-WatsyD-24px)">
+    <g id="Grupo_513" data-name="Grupo 513" transform="translate(-0.496 -0.163)">
+      <g id="Watsy_Navidad_Logo_Mesa_de_trabajo_1_copia_3" data-name="Watsy Navidad Logo_Mesa de trabajo 1 copia 3" transform="translate(0.5 0.163)">
+        <path id="Trazado_45" data-name="Trazado 45" d="M45.651,117.72h2.6a.746.746,0,0,1,.746.746v10.606a7.849,7.849,0,0,1-1.7,5.4,6.113,6.113,0,0,1-4.818,1.914,6.317,6.317,0,0,1-2.839-.647,5.7,5.7,0,0,1-1.64-1.21.707.707,0,0,0-1.028,0,5.785,5.785,0,0,1-4.434,1.856,6.126,6.126,0,0,1-4.83-1.913,7.849,7.849,0,0,1-1.7-5.4v-3.035a.746.746,0,0,1,.746-.746h2.6a.746.746,0,0,1,.745.746v3.035a4.317,4.317,0,0,0,.673,2.6,2.257,2.257,0,0,0,1.928.912,2.359,2.359,0,0,0,1.967-.911,4.14,4.14,0,0,0,.713-2.6l.024-5.526a.746.746,0,0,1,.746-.745h2.683a.746.746,0,0,1,.746.744l.024,5.526a4.139,4.139,0,0,0,.713,2.6,2.375,2.375,0,0,0,1.98.911,2.265,2.265,0,0,0,1.94-.911,4.323,4.323,0,0,0,.674-2.6V118.466a.746.746,0,0,1,.747-.746Z" transform="translate(-25.996 -117.711)" fill="url(#linear-gradient)"/>
+        <circle id="Elipse_3" data-name="Elipse 3" cx="2.046" cy="2.046" r="2.046" transform="translate(0 2.495)" fill="#ff6e00"/>
+        <circle id="Elipse_4" data-name="Elipse 4" cx="2.046" cy="2.046" r="2.046" transform="translate(9.445 0)" fill="#ff6e00"/>
+      </g>
+    </g>
+  </g>
+</svg>

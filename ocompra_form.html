@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--======== BOX ICONS =========-->
+  <link rel="stylesheet" href="assets/css/box-icons/boxicons.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap5/bootstrap.min.css">
+  <script src="assets/js/bootstrap5/bootstrap.bundle.min.js"></script>
+  <!--======== CSS =========-->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <title>Responsive sidebar submenus</title>
+  
+  <!-- ESPECIALES DE LA VISTA -->
+  <script src="assets/js/jquery/jquery-3.6.0.min.js"></script>
+  <!-- Main Quill library -->
+  <script src="assets/js/quill/quill.min.js"></script>
+  
+  <!-- Theme included stylesheets -->
+  <link href="assets/css/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/css/quill/quill.bubble.css" rel="stylesheet">
+  
+  <!-- HASH PARA PRODUCTOS -->
+  <script src="assets/js/hashes/hashes.js"></script>
+  
+  <!-- MAX LENGHT PARA LIMITAR LOS TEXTOS -->
+  <link rel="stylesheet" href="assets/css/sweetAlert/sweetalert2.min.css">
+  <script src="assets/js/sweetAlert/sweetalert2.all.min.js"></script>
+  <script src="assets/js/maxLength.js"></script>
+</head>
+<body>
+  <!--======== HEADER =========-->
+  <header class="header">
+    <div class="header__container">
+
+      <img src="assets/img/perfil.jpg" alt="" class="header__img">
+
+      <!-- <a href="#" class="header__logo">Watsy</a> -->
+
+      <div class="header__search">
+        <input type="search" placeholder="Search" class="header__input">
+        <i class="bx bx-search header__icon"></i>
+      </div>
+
+      <div class="header__toggle">
+        <i class="bx bx-menu" id="header-toggle"></i>
+      </div>
+
+    </div>
+  </header>
+  <!--======== NAV =========-->
+  <div class="nav" id="navbar">
+    <nav class="nav__container">
+      <div>
+        <a href="#" class="nav__link nav__logo">
+          <img src="assets/img/isotipo-WatsyD-24px.svg" class="nav__icon-iso" alt="">
+          <img src="assets/img/Logotipo-WatsyD-24px.svg" class="nav__icon-lgtipo" alt="">
+          <!-- <i class='bx bxs-message-square nav__icon'></i> -->
+          <!-- <span class="nav__logo-name">Watsy</span> -->
+        </a>
+        <div class="nav__list">
+          <div class="nav__items">
+            <h3 class="nav__subtitle">Application</h3>
+            <a href="#" class="nav__link">
+              <i class='bx bxs-dashboard nav__icon'></i>
+              <span class="nav__name">Dashboard</span>
+            </a>
+          <a href="#" class="nav__link">
+              <i class='bx bxs-user nav__icon'></i>
+              <span class="nav__name">Clientes</span>
+            </a>
+            <a href="#" class="nav__link">
+              <i class='bx bxs-group nav__icon'></i>
+              <span class="nav__name">Colaboradores</span>
+            </a>
+
+            <div class="nav__dropdown">
+              <a href="#" class="nav__link">
+                <i class='bx bxs-file-doc nav__icon'></i>
+                <span class="nav__name">Documentos</span>
+                <i class="bx bx-chevron-down nav__icon nav__dropdown-icon"></i>
+              </a>
+
+              <div class="nav__dropdown-collapse">
+                <div class="nav__dropdown-content">
+                  <a href="#" class="nav__dropdown-item">Ordenes</a>
+                  <a href="#" class="nav__dropdown-item">Cotizaciones</a>
+                  <a href="#" class="nav__dropdown-item">Facturas</a>
+                  <a href="#" class="nav__dropdown-item">Recibo de Caja</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="nav__link nav__logout">
+        <i class='bx bx-log-out nav__icon'></i>
+        <span class="nav__name">Log Out</span>
+      </a>
+    </nav>
+  </div>
+  <!--======== CONTENTS =========-->
+  <main>
+    <header class="header__main-content grid-col-2 form-docs">
+      <div class="title-section">
+        <h2 class="main__title-section">Crear <span class="main__title-section-color">Ord. de Compra.</span></h2>
+      </div>
+      <div class="form-group">
+        <div class="__input my-1">
+          <label for="" class="__input__label">No. de Ord. de compra: </label>
+          <input type="text" class="__input__control" disabled value="O-7956">
+        </div>
+          <span class="__input__span color__text-light text-end">Último ingresado: <a href="#" class="__input__span__link">CO-000122</a></span>
+      </div>
+    </header>
+    <section class="form__create-docs grid-col-2 ">
+      <div>
+        <div class="form-group-action">
+          <div class="__input __input__select">
+            <label for="" class="__input__label">Cliente</label>
+            <i class='bx bxs-chevron-down __input__select-i-arrow'></i>
+            <select class="__input__control">
+              <option value="">InBestGo</option>
+              <option value="">Watsy</option>
+            </select>
+          </div>
+          <button class="__input__action-btn"><i class='bx bx-plus'></i></button>
+        </div>
+        <div class="__card p-3 mb-3">
+          <header>
+            <h5 class="color__text-light">Cliente Seleccionado</h5>
+            <button class="btn__action-button text__regular" data-bs-toggle="modal" data-bs-target="#Modal-infoClient"><i
+                class='bx bx-info-circle'></i></button>
+          </header>
+          <main>
+            <span class="__input__span color__white text__regular">CO-000122</span>
+            <span class="__input__span color__white text__regular">Angel Chajon</span>
+          </main>
+        </div>
+        <h4 class="h4__sub-title">Generales<hr></h4>
+        <div class="__input">
+          <label for="" class="__input__label">Fecha de pedido</label>
+          <input type="datetime-local" class="__input__control">
+        </div>
+        <div class="__input">
+          <label for="" class="__input__label">Fecha de vencimiento</label>
+          <input type="datetime-local" class="__input__control">
+        </div>
+        <div class="__input __input__select">
+          <label for="" class="__input__label">Colaborador</label>
+          <i class='bx bxs-chevron-down __input__select-i-arrow'></i>
+          <select class="__input__control">
+            <option value="">Geovanny Gil</option>
+            <option value="">Orlando Sul</option>
+          </select>
+        </div>
+        <div class="__input __input__select">
+          <label for="" class="__input__label">Sucursal de salida: </label>
+          <i class='bx bxs-chevron-down __input__select-i-arrow'></i>
+          <select class="__input__control">
+            <option value="">Central</option>
+            <option value="">Guatemala</option>
+          </select>
+        </div>
+        <label class="form-control color__text-light text__regular">
+          <input type="checkbox" name="checkbox" id="checkDelivery" />
+          <span>Agregar dirección de entrega</span>
+        </label>
+        <div class="direction-delivery my-2 d-none" id="deliveryDescription">
+          <header class="d-flex">
+            <h5 class="color__text-light">Datos de la entrega: </h5>
+            <button class="btn__action-button px-2" data-bs-toggle="modal" data-bs-target="#modalDelivery"><i
+                class='bx bx-edit'></i></button>
+          </header>
+          <span class="color__first text__sm d-block">0 Av. 7-7 Buena vista, Sumpango Sacatepéquez</span>
+          <span class="color__first text__sm d-block">05 de Noviembre del 2021 15:00hrs</span>
+        </div>
+      </div>
+      <div>
+      <!-- Modal Delivery-->
+      <div class="modal fade" id="modalDelivery" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Dirección de <span class="color__first">Entrega</span></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="options">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="directionCite" id="inlineRadio1" value="client">
+                  <label class="form-check-label" for="inlineRadio1">Misma dirección del cliente</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="directionCite" id="inlineRadio3"
+                    value="direction-client">
+                  <label class="form-check-label" for="inlineRadio3">Direcciones del cliente</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="directionCite" id="inlineRadio2" value="other-direction">
+                  <label class="form-check-label" for="inlineRadio2">Otra dirección</label>
+                </div>
+                <script>
+                  var delivery = {
+                    enabled: false,
+                    option: ''
+                  };
+                  const radioButtons = document.querySelectorAll('input[name="directionCite"]');
+                  for (const radioButton of radioButtons) {
+                    radioButton.addEventListener('change', function (e) {
+                      const formdirection = document.querySelectorAll('.form-direction-client');
+                      for (const form of formdirection) {
+                        !form.classList.contains('d-none') ? form.classList.add('d-none') : null;
+                      }
+                      this.value !== 'client' ? document.getElementById(this.value).classList.remove('d-none') : null;
+                      delivery.enabled = true;
+                      delivery.option = this.value;
+                    });
+                  }
+                </script>
+              </div>
+              <div class="direction-client d-none form-direction-client mt-2" id="direction-client">
+                <div class="my-3 col-md-12">
+                  <label for="exampleFormControlInput1" class="form-label">Direcciones del cliente</label>
+                  <select name="" id="" class="form-control">
+                    <option value="">0 Avenida 7-70 Zona 5 Sumpango Sacatepéquez</option>
+                  </select>
+                </div>
+              </div>
+              <div class="other-direction d-none form-direction-client mt-2" id="other-direction">
+                <div class="row">
+                  <div class="col-md-12">
+                    <input class="form-control" type="text" placeholder="Dirección" aria-label="Dirección">
+                  </div>
+                  <div class="my-3 col-md-6">
+                    <label for="exampleFormControlInput1" class="form-label">Departamento</label>
+                    <select name="" id="" class="form-control">
+                      <option value="">Guatemala</option>
+                      <option value="">Zacapa</option>
+                      <option value="">Sacatepéquez</option>
+                      <option value="">Petén</option>
+                      <option value="">Jutiapa</option>
+                    </select>
+                  </div>
+                  <div class="my-3 col-md-6">
+                    <label for="exampleFormControlInput1" class="form-label">Municipio</label>
+                    <select name="" id="" class="form-control">
+                      <option value="">Villa Nueva</option>
+                      <option value="">Guatemala</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12">
+                    <label for="" class="form-label">Fecha de cita</label>
+                    <input class="form-control" type="datetime-local">
+                  </div>
+                  <div class="col-md-12">
+                    <label for="" class="form-label">Referencia</label>
+                    <textarea name="" id="" cols="30" rows="5" class="form-control" value="">
+                                </textarea>
+                    <p class="text__sm"><span class="badge bg-secondary">10</span> de <span>840</span> caracteres como
+                      limite</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn__ btn__primary px-4 py-1">Agendar</button>
+              <button type="button" class="btn__ btn__secondary px-4 py-1" data-bs-dismiss="modal"
+                id="btnCloseCite">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        var checkDelivery = document.getElementById('checkDelivery');
+        var modalDelivery = document.getElementById('modalDelivery');
+        var deliveryDescription = document.getElementById('deliveryDescription');
+        checkDelivery.addEventListener('change', function () {
+          if (this.checked) {
+            $(modalDelivery).modal('show');
+          } else {
+            checkDelivery.parentElement.children[1].innerText = 'Agregar dirección de entrega';
+            console.log('Cita cancelada');
+            deliveryDescription.classList.add('d-none');
+            delivery.enabled = false;
+          }
+        });
+
+        $(modalDelivery).on("hidden.bs.modal", function () {
+          console.log(delivery);
+          if (!delivery.enabled) {
+            if (delivery.option == '' && delivery.enabled == false) {
+              checkDelivery.parentElement.children[1].innerText = 'Agregar dirección de entrega';
+              checkDelivery.checked = false;
+              console.log('Cita cancelada');
+              deliveryDescription.classList.add('d-none');
+              return;
+            }
+          }
+
+          checkDelivery.parentElement.children[1].innerText = 'Entrega confirmada';
+          deliveryDescription.classList.remove('d-none');
+        });
+      </script>
+      <header class="d-grid head__docs">
+          <div class="form-group">
+              <span class="__input__span color__white text__regular">Seguimiento de la orden:</span>
+              <span class="__input__span color__first text__regular"><a href="#" class="__input__span__link">CO-000122</a></span>
+          </div>
+          <div class="__input __input__select">
+            <label for="" class="__input__label">Estado de cotización: </label>
+            <i class='bx bxs-chevron-down __input__select-i-arrow'></i>
+            <select class="__input__control">
+              <option value="">Central</option>
+              <option value="">Guatemala</option>
+            </select>
+          </div>
+          <div class="__input">
+            <label for="" class="__input__label">Días de crédito</label>
+            <input type="number" class="__input__control">
+          </div>
+      </header>
+            <div class="table-card-first">
+                <header class="display__flex-sb">
+                  <h4 class="__card__title bold__text">Productos</h4>
+                  <button class="btn__ btn__secondary py-2 px-3 text__sm" data-bs-toggle="modal" data-bs-target="#modal__AddProduct"><i
+                      class='bx bx-plus'></i> Agregar un producto</button>
+                </header>
+                <div class="table-responsive table-products">
+                  <table class="table table-borderless table-hover" id="table__products">
+                    <thead>
+                      <tr class="text__sm">
+                        <th></th>
+                        <th>Cantidad</th>
+                        <th>Descripción</th>
+                        <th>P. Unitario</th>
+                        <th>Descuento</th>
+                        <th>P.Total</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody__products">
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <footer class="grid-col-2 footer-products">
+                <div>
+                  <textarea name="" id="textarea__limitDescJob" placeholder="Descripción del trabajo"
+                    class="__input__control b-first b-rounded p-3 text__sm" cols="30" rows="5"></textarea>
+                  <p class="text__sm color__text-light"><span class="badge bg-secondary" id="span__limitDescJob">800</span> de
+                    <span>800</span> caracteres como limite</p>
+                </div>
+                <div>
+                  <h4 class="h4__sub-title color__white">Monto
+                    <hr>
+                  </h4>
+                  <div class="grid-col-2 my-1">
+                    <h4 class="h4__sub-title color__text-light">Subtotal</h4>
+                    <span class="badge bg-dark" id="label__subtotal">Q 00.00</span>
+                  </div>
+                  <div class="grid-col-2 my-1">
+                    <h4 class="h4__sub-title color__text-light">Descuento</h4>
+                    <span class="badge bg-dark" id="label__discount">Q 00.00</span>
+                  </div>
+                  <hr>
+                  <div class="grid-col-2 my-1">
+                    <h4 class="h4__sub-title color__text-light">Total</h4>
+                    <span class="badge bg-dark" id="label__total">Q 00.00</span>
+                  </div>
+                </div>
+              </footer>
+              <div class="buttons justify-content-end d-flex ">
+                <button class="btn__ btn__primary mx-2 my-3 d-none" id="getContentEditor"> Contenido Quill</button>
+                <button class="btn__ btn__primary mx-2 my-3"><i class='bx bxs-detail'></i> Generar Orden</button>
+              </div>
+      </div>
+    </section>
+      <!-- Modal Add Products-->
+      <div class="modal fade" id="modal__AddProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Agregar <span class="color__first">Producto</span></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="" class="form-label">Cantidad</label>
+                  <input class="form-control" type="number" id="input__quantityP">
+                </div>
+                <div class="col-md-6">
+                  <label for="" class="form-label">P.Unitario</label>
+                  <input class="form-control" type="number" id="input__priceUnitP" min="0.00" step="0.10">
+                </div>
+                <div class="col-md-12">
+                  <label for="" class="form-label">Descripción:</label>
+                  <textarea name="" cols="30" rows="5" class="form-control" id="textarea__descP"></textarea>
+                  <p class="text__sm"><span class="badge bg-secondary" id="span__limitDescP">150</span> de 150 caracteres como
+                    limite</p>
+                </div>
+                <div class="col-md-6">
+                  <label for="" class="form-label">Descuento</label>
+                  <input class="form-control" type="number" id="input__discountP" min="0.00" step="0.10">
+                </div>
+                <div class="col-md-6">
+                  <label for="" class="form-label">Total</label>
+                  <input class="form-control" type="number" id="input__totalP" min="0.00" step="0.10">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn__ btn__primary px-4 py-1" id="btn__addProduct">Agregar</button>
+                <button type="button" class="btn__ btn__secondary px-4 py-1" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Update Products-->
+      <div class="modal fade" id="modal__UpdateProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modificar <span class="color__first">Producto</span></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <input type="hidden" id="input__UcodeP">
+                </div>
+                <div class="col-md-6">
+                  <label for="" class="form-label">Cantidad</label>
+                  <input class="form-control" type="number" id="input__UquantityP">
+                </div>
+                <div class="col-md-6">
+                  <label for="" class="form-label">P.Unitario</label>
+                  <input class="form-control" type="number" id="input__UpriceUnitP" min="0.00" step="0.10">
+                </div>
+                <div class="col-md-12">
+                  <label for="" class="form-label">Descripción:</label>
+                  <textarea name="" cols="30" rows="5" class="form-control" id="textarea__UdescP"></textarea>
+                  <p class="text__sm"><span class="badge bg-secondary" id="span__UlimitDescP">150</span> de 150 caracteres
+                    como
+                    limite</p>
+                </div>
+                <div class="col-md-6">
+                  <label for="" class="form-label">Descuento</label>
+                  <input class="form-control" type="number" id="input__UdiscountP" min="0.00" step="0.10">
+                </div>
+                <div class="col-md-6">
+                  <label for="" class="form-label">Total</label>
+                  <input class="form-control" type="number" id="input__UtotalP" min="0.00" step="0.10">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn__ btn__primary px-4 py-1" id="btn__modifyProduct">Modificar</button>
+                <button type="button" class="btn__ btn__secondary px-4 py-1" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal information Client-->
+      <div class="modal fade" id="Modal-infoClient" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content  ">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Más <span class="color__first">Información</span></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-5">
+              <div class="row">
+                <h4 class="col-md-6 my-1 h4__sub-title color__text-light">Código de cliente:</h4>
+                <span class="col-md-6 my-1 badge bg-light text-dark">C-000023</span>
+                <h4 class="col-md-6 my-1 h4__sub-title color__text-light">Nombre del cliente:</h4>
+                <span class="col-md-6 my-1 badge bg-light text-dark">Gerson Perez</span>
+                <h4 class="col-md-6 my-1 h4__sub-title color__text-light">NIT:</h4>
+                <span class="col-md-6 my-1 badge bg-light text-dark">101965-K</span>
+                <h4 class="col-md-6 my-1 h4__sub-title color__text-light">Empresa:</h4>
+                <span class="col-md-6 my-1 badge bg-light text-dark">Platzi</span>
+                <h4 class="col-md-6 my-1 h4__sub-title color__text-light">Correo Electrónico:</h4>
+                <span class="col-md-6 my-1 badge bg-light text-dark">compras@platzi.com</span>
+                <br>
+                <div class="col-md-8 px-3">
+                  <div class="row">
+                    <h4 class="col-md-12 my-1 h4__sub-title color__text-light">Direcciones:</h4>
+                    <div class="col-md-12 info bg-gray b-rounded bg-gray-light p-2 my-1">
+                      <p class="text__sm">5ta Avenida 96-5 Calle Colonia Buena Vista</p>
+                      <p class="text__sm">Guatemala - Villa Nueva</p>
+                      <span class="text__sm color__first text__sbold">*Dirección Principal</span>
+                    </div>
+                    <div class="col-md-12 info bg-gray b-rounded bg-gray-light p-2 my-1">
+                      <p class="text__sm">5ta Avenida 96-5 Calle Colonia Buena Vista</p>
+                      <p class="text__sm">Guatemala - Villa Nueva</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 px-3">
+                  <div class="row">
+                    <h4 class="col-md-12 my-1 h4__sub-title color__text-light">Teléfonos:</h4>
+                    <div class="col-md-12 info bg-gray b-rounded bg-gray-light p-3 my-1">
+                      <p class="text__sm">4396-1286</p>
+                      <span class="text__sm color__first text__sbold">*Telefono Principal</span>
+                    </div>
+                    <div class="col-md-12 info bg-gray b-rounded bg-gray-light p-3 my-1">
+                      <p class="text__sm">4396-1286</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer px-4">
+              <button type="button" class="btn__ btn__secondary px-4 py-1" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  <!--======== MAIN JS =========-->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/docs.js"></script>
+</body>
+</html>

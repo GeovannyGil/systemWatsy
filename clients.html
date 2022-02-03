@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--======== BOX ICONS =========-->
+  <link rel="stylesheet" href="assets/css/box-icons/boxicons.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap5/bootstrap.min.css">
+  <script src="assets/js/bootstrap5/bootstrap.bundle.min.js"></script>
+  <!--======== CSS =========-->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <title>Responsive sidebar submenus</title>
+</head>
+<body>
+  <!--======== HEADER =========-->
+  <header class="header">
+    <div class="header__container">
+
+      <img src="assets/img/perfil.jpg" alt="" class="header__img">
+
+      <!-- <a href="#" class="header__logo">Watsy</a> -->
+
+      <div class="header__search">
+        <input type="search" placeholder="Search" class="header__input">
+        <i class="bx bx-search header__icon"></i>
+      </div>
+
+      <div class="header__toggle">
+        <i class="bx bx-menu" id="header-toggle"></i>
+      </div>
+
+    </div>
+  </header>
+  <!--======== NAV =========-->
+  <div class="nav" id="navbar">
+    <nav class="nav__container">
+      <div>
+        <a href="#" class="nav__link nav__logo">
+          <img src="assets/img/isotipo-WatsyD-24px.svg" class="nav__icon-iso" alt="">
+          <img src="assets/img/Logotipo-WatsyD-24px.svg" class="nav__icon-lgtipo" alt="">
+          <!-- <i class='bx bxs-message-square nav__icon'></i> -->
+          <!-- <span class="nav__logo-name">Watsy</span> -->
+        </a>
+        <div class="nav__list">
+          <div class="nav__items">
+            <h3 class="nav__subtitle">Application</h3>
+            <a href="#" class="nav__link">
+              <i class='bx bxs-dashboard nav__icon'></i>
+              <span class="nav__name">Dashboard</span>
+            </a>
+          <a href="#" class="nav__link">
+              <i class='bx bxs-user nav__icon'></i>
+              <span class="nav__name">Clientes</span>
+            </a>
+            <a href="#" class="nav__link">
+              <i class='bx bxs-group nav__icon'></i>
+              <span class="nav__name">Colaboradores</span>
+            </a>
+
+            <div class="nav__dropdown">
+              <a href="#" class="nav__link">
+                <i class='bx bxs-file-doc nav__icon'></i>
+                <span class="nav__name">Documentos</span>
+                <i class="bx bx-chevron-down nav__icon nav__dropdown-icon"></i>
+              </a>
+
+              <div class="nav__dropdown-collapse">
+                <div class="nav__dropdown-content">
+                  <a href="#" class="nav__dropdown-item">Ordenes</a>
+                  <a href="#" class="nav__dropdown-item">Cotizaciones</a>
+                  <a href="#" class="nav__dropdown-item">Facturas</a>
+                  <a href="#" class="nav__dropdown-item">Recibo de Caja</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="nav__link nav__logout">
+        <i class='bx bx-log-out nav__icon'></i>
+        <span class="nav__name">Log Out</span>
+      </a>
+    </nav>
+  </div>
+  <!--======== CONTENTS =========-->
+  <main>
+    <header class="header__main-content">
+      <h2 class="main__title-section">Clien<span class="main__title-section-color">tes.</span></h2>
+    </header>
+    <section class="main__section-client">
+      <div class="section__form-client">
+        <div class="grid-col-2">
+          <div class="__input">
+            <label for="" class="__input__label">NIT</label>
+            <input type="text" class="__input__control" name="nit" id="nit">
+          </div>
+          <div class="__input">
+            <label for="" class="__input__label">Código</label>
+            <input type="text" class="__input__control" disabled name="code-client" id="code-client" value="C-000123">
+            <!-- <span class="__input__span">Último ingresado: <a href="#" class="__input__span__link">C-000122</a></span> -->
+          </div>
+        </div>
+        <div class="form-group-action">
+          <div class="__input __input__select">
+            <label for="" class="__input__label">Empresa</label>
+            <i class='bx bxs-chevron-down __input__select-i-arrow'></i>
+            <select class="__input__control">
+              <option value="">Platzi</option>
+              <option value="">Watsy</option>
+            </select>
+          </div>
+          <button class="__input__action-btn" data-bs-toggle="modal" data-bs-target="#Modal-addBusiness"><i class='bx bx-plus'></i></button>
+        </div>
+        <div class="__input">
+          <label for="" class="__input__label">Nombres</label>
+          <input type="text" class="__input__control" >
+        </div>
+        <div class="__input">
+          <label for="" class="__input__label">Apellidos</label>
+          <input type="text" class="__input__control" >
+        </div>
+        <div class="__input">
+          <label for="" class="__input__label">Correo Electrónico</label>
+          <input type="email" class="__input__control" >
+        </div>
+        <button class="btn__ btn__primary btn__block" id="btnAddClient__Desktop">Agregar Cliente</button>
+      </div>
+      <div class="section__table section__client">
+        <div class="grid-col-2">
+          <div class="__card">
+            <header>
+              <h4 class="__card__title">Direcciones</h4>
+              <button class="__card__btn-action" data-bs-toggle="modal" data-bs-target="#Modal-addDirection"><i class='bx bx-plus'></i> Agregar</button>
+            </header>
+            <div class="__card__content">
+              <div class="__card__item __card__item-client">
+                <label>Departamento: <span>Guatemala</span></label>
+                <label>Municipio: <span>Villa Nueva</span></label>
+                <label>Dirección: <span>5ta Avenida 96-5 Calle Colonia Buena Vista</span></label>
+                <div class="__card__item-actions">
+                  <button class="btn__action-button"><i class='bx bxs-pin  active'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-pencil'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-trash-alt'></i></button>
+                </div>
+              </div>
+              <div class="__card__item __card__item-client">
+                <label>Departamento: <span>Guatemala</span></label>
+                <label>Municipio: <span>Villa Nueva</span></label>
+                <label>Dirección: <span>5ta Avenida 96-5 Calle Colonia Buena Vista</span></label>
+                <div class="__card__item-actions">
+                  <button class="btn__action-button"><i class='bx bxs-pin'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-pencil'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-trash-alt'></i></button>
+                </div>
+              </div>
+              <div class="__card__item __card__item-client">
+                <label>Departamento: <span>Guatemala</span></label>
+                <label>Municipio: <span>Villa Nueva</span></label>
+                <label>Dirección: <span>5ta Avenida 96-5 Calle Colonia Buena Vista</span></label>
+                <div class="__card__item-actions">
+                  <button class="btn__action-button"><i class='bx bxs-pin'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-pencil'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-trash-alt'></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="__card">
+            <header>
+              <h4 class="__card__title">Télefonos</h4>
+              <button class="__card__btn-action" data-bs-toggle="modal" data-bs-target="#Modal-addPhone"><i class='bx bx-plus'></i> Agregar</button>
+            </header>
+            <div class="__card__content">
+              <div class="__card__item __card__item-client">
+                <label>Télefono: <span>4396-1286</span></label>
+                <div class="__card__item-actions">
+                  <button class="btn__action-button"><i class='bx bxs-pin  active'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-pencil'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-trash-alt'></i></button>
+                </div>
+              </div>
+              <div class="__card__item __card__item-client">
+                <label>Télefono: <span>4396-1286</span></label>
+                <div class="__card__item-actions">
+                  <button class="btn__action-button"><i class='bx bxs-pin  active'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-pencil'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-trash-alt'></i></button>
+                </div>
+              </div>
+              <div class="__card__item __card__item-client">
+                <label>Télefono: <span>4396-1286</span></label>
+                <div class="__card__item-actions">
+                  <button class="btn__action-button"><i class='bx bxs-pin  active'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-pencil'></i></button>
+                  <button class="btn__action-button"><i class='bx bxs-trash-alt'></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn__ btn__primary btn__block mt-3" id="btnAddClient__Mobile">Agregar Cliente</button>
+        <div class="table-card-first">
+          <header class="display__flex-sb">
+            <h4 class="__card__title bold__text">Todos los clientes</h4>
+            <div class="header__search">
+              <input type="search" placeholder="Search" class="header__input">
+              <i class="bx bx-search header__icon"></i>
+            </div>
+          </header>
+          <div class="table-responsive">
+            <table class="table table-borderless table-hover">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>NIT</th>
+                  <th>Encargado</th>
+                  <th>Empresa</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>123456789</td>
+                  <td>Juan Perez</td>
+                  <td>Empresa 1</td>
+                  <td>
+                    <button class="btn__action-button" data-bs-toggle="modal" data-bs-target="#Modal-infoClient"><i class='bx bxs-info-circle'></i></button>
+                    <button class="btn__action-button"><i class='bx bxs-pencil'></i></button>
+                    <button class="btn__action-button"><i class='bx bxs-trash-alt'></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>123456789</td>
+                  <td>Juan Perez</td>
+                  <td>Empresa 2</td>
+                  <td>
+                    <button class="btn__action-button" data-bs-toggle="modal" data-bs-target="#Modal-infoClient"><i class='bx bxs-info-circle'></i></button>
+                    <button class="btn__action-button"><i class='bx bxs-pencil'></i></button>
+                    <button class="btn__action-button"><i class='bx bxs-trash-alt'></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>123456789</td>
+                  <td>Juan Perez</td>
+                  <td>Empresa 3</td>
+                  <td>
+                    <button class="btn__action-button" data-bs-toggle="modal" data-bs-target="#Modal-infoClient"><i class='bx bxs-info-circle'></i></button>
+                    <button class="btn__action-button"><i class='bx bxs-pencil'></i></button>
+                    <button class="btn__action-button"><i class='bx bxs-trash-alt'></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Address-->
+  <div class="modal fade" id="Modal-addDirection" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar <span class="color__first">Dirección</span></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <input class="form-control" type="text" placeholder="Dirección" aria-label="Dirección">
+            </div>
+            <div class="my-3 col-md-6">
+              <label for="exampleFormControlInput1" class="form-label">Departamento</label>
+              <select name="" id="" class="form-control">
+                <option value="">Guatemala</option>
+                <option value="">Zacapa</option>
+                <option value="">Sacatepéquez</option>
+                <option value="">Petén</option>
+                <option value="">Jutiapa</option>
+              </select>
+            </div>
+            <div class="my-3 col-md-6">
+              <label for="exampleFormControlInput1" class="form-label">Municipio</label>
+              <select name="" id="" class="form-control">
+                <option value="">Villa Nueva</option>
+                <option value="">Guatemala</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn__ btn__primary px-4 py-1">Aceptar</button>
+          <button type="button" class="btn__ btn__secondary px-4 py-1" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Phone-->
+  <div class="modal fade" id="Modal-addPhone" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar <span class="color__first">Teléfono</span></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <input class="form-control" type="text" placeholder="Teléfono" aria-label="Teléfono">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn__ btn__primary px-4 py-1">Aceptar</button>
+          <button type="button" class="btn__ btn__secondary px-4 py-1" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Business-->
+  <div class="modal fade" id="Modal-addBusiness" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar <span class="color__first">Empresa</span></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <input class="form-control" type="text" placeholder="Nombre de empresa" aria-label="empresa">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn__ btn__primary px-4 py-1">Aceptar</button>
+          <button type="button" class="btn__ btn__secondary px-4 py-1" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal information Client-->
+  <div class="modal fade" id="Modal-infoClient" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Más <span class="color__first">Información</span></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5">
+          <div class="row">
+            <h4 class="col-md-6 my-1 h4__sub-title color__text-light">Código de cliente:</h4>
+            <span class="col-md-6 my-1 badge bg-light text-dark">C-000023</span>
+            <h4 class="col-md-6 my-1 h4__sub-title color__text-light">Nombre del cliente:</h4>
+            <span class="col-md-6 my-1 badge bg-light text-dark">Gerson Perez</span>
+            <h4 class="col-md-6 my-1 h4__sub-title color__text-light">NIT:</h4>
+            <span class="col-md-6 my-1 badge bg-light text-dark">101965-K</span>
+            <h4 class="col-md-6 my-1 h4__sub-title color__text-light">Empresa:</h4>
+            <span class="col-md-6 my-1 badge bg-light text-dark">Platzi</span>
+            <h4 class="col-md-6 my-1 h4__sub-title color__text-light">Correo Electrónico:</h4>
+            <span class="col-md-6 my-1 badge bg-light text-dark">compras@platzi.com</span>
+            <br>
+            <div class="col-md-8 px-3">
+              <div class="row">
+                <h4 class="col-md-12 my-1 h4__sub-title color__text-light">Direcciones:</h4>
+                <div class="col-md-12 info bg-gray b-rounded bg-gray-light p-2 my-1">
+                  <p class="text__sm">5ta Avenida 96-5 Calle Colonia Buena Vista</p>
+                  <p class="text__sm">Guatemala - Villa Nueva</p>
+                  <span class="text__sm color__first text__sbold">*Dirección Principal</span>
+                </div>
+                <div class="col-md-12 info bg-gray b-rounded bg-gray-light p-2 my-1">
+                  <p class="text__sm">5ta Avenida 96-5 Calle Colonia Buena Vista</p>
+                  <p class="text__sm">Guatemala - Villa Nueva</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 px-3">
+              <div class="row">
+                <h4 class="col-md-12 my-1 h4__sub-title color__text-light">Teléfonos:</h4>
+                <div class="col-md-12 info bg-gray b-rounded bg-gray-light p-3 my-1">
+                  <p class="text__sm">4396-1286</p>
+                  <span class="text__sm color__first text__sbold">*Telefono Principal</span>
+                </div>
+                <div class="col-md-12 info bg-gray b-rounded bg-gray-light p-3 my-1">
+                  <p class="text__sm">4396-1286</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-between px-4">
+          <div class="d-grid gap-2 d-md-block">
+                <button class="btn__action-button color__first fs-3 mx-2"><i class='bx bxs-pencil'></i></button>
+                <button class="btn__action-button  color__first fs-3 mx-2"><i class='bx bxs-trash-alt'></i></button>
+          </div>
+          <button type="button" class="btn__ btn__secondary px-4 py-1" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--======== MAIN JS =========-->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
